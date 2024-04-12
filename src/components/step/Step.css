@@ -1,0 +1,23 @@
+.step {
+  border: 2px solid gray;
+  border-radius: 5px;
+
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+}
+
+.step__number {
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 0.1rem 0.3rem;
+}
+
+.step__name {
+  flex: 1 0 auto;
+}
+
+.step__indicators {
+  display: flex;
+  justify-content: end;
+}
