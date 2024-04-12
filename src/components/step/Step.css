@@ -1,4 +1,7 @@
 .step {
+  /* For (1) */
+  position: relative;
+
   border: 2px solid gray;
   border-radius: 5px;
 
@@ -7,6 +10,17 @@
   display: flex;
   gap: .2rem;
   justify-content: start;
+}
+
+/* (1) Vertical line connecting steps */
+.step + .step::before {
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 1.2rem;
+
+  height: 2rem;
+  content: '';
+  border-left: 5px solid lightgray;
 }
 
 .step__icon-wrapper {
