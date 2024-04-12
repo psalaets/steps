@@ -2,14 +2,17 @@ import { Children } from 'react';
 import './Step.css';
 
 export function Step(props) {
-  const { step, children, icon } = props;
+  const { step, children, icon, onClick, active } = props;
 
   const indicators = Children.count(children) > 0
     ? <Indicators>{children}</Indicators>
     : null;
 
   return (
-    <li className={`step`}>
+    <li
+      className={`step ${active ? 'step--active' : ''}`}
+      onClick={() => onClick(step.id)}
+    >
       <span className="step__icon-wrapper">
         {icon}
       </span>

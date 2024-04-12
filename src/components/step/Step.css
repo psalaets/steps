@@ -12,6 +12,10 @@
   justify-content: start;
 }
 
+.step--active {
+  border-color: #9370DB;
+}
+
 /* (1) Vertical line connecting steps */
 .step + .step::before {
   position: absolute;

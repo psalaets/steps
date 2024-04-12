@@ -1,26 +1,39 @@
-import { GenericStep } from '../step/types/GenericStep';
-import { MergeStep } from '../step/types/MergeStep';
-import { UpdateStep } from '../step/types/UpdateStep';
+import { useState } from "react";
+import { FaBolt } from "react-icons/fa6";
+import { FaShareNodes } from "react-icons/fa6";
+import { FaCodeMerge, FaList } from "react-icons/fa6";
+import { Step } from "../step/Step";
+import { Pill } from "../pill/Pill";
 
 import './Steps.css';
 
 export function Steps(props) {
-  const steps = props.steps;
+  const { steps } = props;
+  const [activeStepId, setActiveStepId] = useState(null);
 
   return (
     <ol className="steps">
-      {steps.map(renderStep)}
+      {steps.map((step) => renderStep(step, step.id === activeStepId, setActiveStepId))}
     </ol>
   )
 }
 
-function renderStep(step) {
+function renderStep(step, isActive, onStepClick) {
   switch (step.type) {
   case 'merge':
-    return <MergeStep step={step} key={step.id} />;
+    return (
+      <Step step={step} onClick={onStepClick} icon={<FaCodeMerge />} active={isActive} key={step.id}>
+        <Pill icon={<FaList />}>{step.data.count}</Pill>
+      </Step>
+    );
   case 'update':
-    return <UpdateStep step={step} key={step.id} />;
+    return (
+      <Step step={step} onClick={onStepClick} icon={<FaBolt />} active={isActive} key={step.id} />
+    );
   default:
-    return <GenericStep step={step} key={step.id} />;
+    // Generic catchall step
+    return (
+      <Step step={step} onClick={onStepClick} icon={<FaShareNodes />} active={isActive} key={step.id} />
+    );
   }
 }

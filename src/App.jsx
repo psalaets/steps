@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import './App.css'
 import { Steps } from './components/steps/Steps';
+import './App.css'
 
 function App() {
   const [steps] = useState(initialSteps);
