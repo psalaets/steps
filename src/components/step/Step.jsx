@@ -2,25 +2,18 @@ import { Children } from 'react';
 import './Step.css';
 
 export function Step(props) {
-  const { step, children, icon, onClick, active } = props;
-
-  const indicators = Children.count(children) > 0
-    ? <Indicators>{children}</Indicators>
-    : null;
+  const { step, children, icon } = props;
 
   return (
-    <li
-      className={`step ${active ? 'step--active' : ''}`}
-      onClick={() => onClick(step.id)}
-    >
+    <div className={`step`}>
       <span className="step__icon-wrapper">
         {icon}
       </span>
       <StepNumber>{step.stepNumber}</StepNumber>
       <StepName>{step.name}</StepName>
-      {indicators}
+      {Children.count(children) > 0 ? <Indicators>{children}</Indicators> : null}
       {/* error icon */}
-    </li>
+    </div>
   );
 }
 

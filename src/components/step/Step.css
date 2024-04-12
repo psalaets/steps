@@ -1,30 +1,9 @@
 .step {
-  /* For (1) */
-  position: relative;
-
-  border: 2px solid gray;
-  border-radius: 5px;
-
-  padding-block: 1rem;
-
   display: flex;
   gap: .2rem;
   justify-content: start;
-}
 
-.step--active {
-  border-color: #9370DB;
-}
-
-/* (1) Vertical line connecting steps */
-.step + .step::before {
-  position: absolute;
-  bottom: calc(100% + 2px);
-  left: 1.2rem;
-
-  height: 2rem;
-  content: '';
-  border-left: 5px solid lightgray;
+  padding-block: 1rem;
 }
 
 .step__icon-wrapper {

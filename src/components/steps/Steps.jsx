@@ -13,27 +13,44 @@ export function Steps(props) {
 
   return (
     <ol className="steps">
-      {steps.map((step) => renderStep(step, step.id === activeStepId, setActiveStepId))}
+      {steps.map((step) => {
+        return (
+          <StepWrapper
+            step={step}
+            active={step.id === activeStepId}
+            onClick={setActiveStepId}
+            key={step.id}
+          />
+        );
+      })}
     </ol>
   )
 }
 
-function renderStep(step, isActive, onStepClick) {
+function StepWrapper({step, active, onClick}) {
+  return (
+    <li className={`step-wrapper ${active ? 'step-wrapper--active' : ''}`} onClick={() => onClick(step.id)}>
+      {renderStep(step)}
+    </li>
+  )
+}
+
+function renderStep(step) {
   switch (step.type) {
   case 'merge':
     return (
-      <Step step={step} onClick={onStepClick} icon={<FaCodeMerge />} active={isActive} key={step.id}>
+      <Step step={step} icon={<FaCodeMerge />}>
         <Pill icon={<FaList />}>{step.data.count}</Pill>
       </Step>
     );
   case 'update':
     return (
-      <Step step={step} onClick={onStepClick} icon={<FaBolt />} active={isActive} key={step.id} />
+      <Step step={step} icon={<FaBolt />} />
     );
   default:
     // Generic catchall step
     return (
-      <Step step={step} onClick={onStepClick} icon={<FaShareNodes />} active={isActive} key={step.id} />
+      <Step step={step} icon={<FaShareNodes />} />
     );
   }
 }
