@@ -6,9 +6,7 @@ function App() {
   const [steps] = useState(initialSteps);
 
   return (
-    <>
-      <Steps steps={steps} />
-    </>
+    <Steps steps={steps} />
   )
 }
 

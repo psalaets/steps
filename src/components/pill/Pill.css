@@ -1,5 +1,5 @@
 .pill {
-  background-color: lightgray;
-  border-radius: 5px;
+  background-color: var(--pill-background-color);
+  border-radius: var(--pill-border-radius);
   padding: .3rem .6rem .3rem .2rem;
 }

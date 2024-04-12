@@ -1,3 +1,10 @@
+/*
+ * All icons get this class based on config passed to <IconContext.Provider>
+ */
+.react-icons {
+  vertical-align: middle;
+}
+
 .icon-wrapper {
   padding-inline: .4rem;
 }

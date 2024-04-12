@@ -1,26 +1,31 @@
-.steps {
-  /* Reset */
+/* Reset */
+ol.steps {
   margin-top: 0em;
   margin-left: 0em;
-  padding-left: 0em;
   list-style: none;
+}
 
-  width: 100%;
+.steps {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  padding-inline: 5rem;
+
+  border: 1px solid var(--steps-border-color);
+  background-color: var(--steps-background-color);
 }
 
 .step-wrapper {
   /* For (1) */
   position: relative;
 
-  border: 2px solid gray;
+  border: 2px solid var(--step-border-color);
   border-radius: 5px;
 }
 
 .step-wrapper--active {
-  border-color: #9370DB;
+  border-color: var(--step-active-border-color);
 }
 
 /* (1) Vertical line connecting steps */
@@ -31,7 +36,7 @@
 
   height: 2rem;
   content: '';
-  border-left: 5px solid lightgray;
+  border-left: 5px solid var(--step-connector-color);
 }
 
 /* Faint horizontal line between steps */
@@ -43,7 +48,7 @@
   height: 0;
 
   content: '';
-  border-top: 2px solid rgb(240, 240, 240);
+  border-top: 2px solid var(--step-separator-color);
 }
 
 .step-wrapper__error {
@@ -54,9 +59,9 @@
 
   width: 2rem;
   height: 2rem;
-  border: 1px solid red;
+  border: 1px solid var(--error-color);
   border-radius: 50%;
-  background-color: rgba(255, 0, 0, 0.1);
+  background-color: var(--error-background-color);
   text-align: center;
   vertical-align: middle;
 }
@@ -68,5 +73,5 @@
   transform: translate(-50%, -50%);
   text-align: center;
 
-  color: red;
+  color: var(--error-color);
 }

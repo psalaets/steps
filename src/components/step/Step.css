@@ -8,8 +8,8 @@
 }
 
 .step__number {
-  background-color: lightgray;
-  border-radius: 5px;
+  background-color: var(--step-number-background-color);
+  border-radius: var(--step-number-border-radius);
   padding: 0.1rem 0.3rem;
 }
 

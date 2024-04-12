@@ -4,13 +4,3 @@
   margin: 0 auto;
   padding: 2rem;
 }
-
-*, *::before, *::after {
-  box-sizing: border-box;
-/*  outline: 1px solid red;*/
-}
-
-/* All icons get this class */
-.react-icons {
-  vertical-align: middle;
-}
