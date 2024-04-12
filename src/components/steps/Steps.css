@@ -33,3 +33,28 @@
   content: '';
   border-left: 5px solid lightgray;
 }
+
+.step-wrapper__error {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(100% + 1rem);
+
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid red;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.1);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.step-wrapper__error-symbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  color: red;
+}

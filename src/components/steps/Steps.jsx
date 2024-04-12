@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { FaBolt } from "react-icons/fa6";
+import { FaBolt, FaRegFaceFrown } from "react-icons/fa6";
 import { FaShareNodes } from "react-icons/fa6";
 import { FaCodeMerge, FaList } from "react-icons/fa6";
 import { Step } from "../step/Step";
 import { Pill } from "../pill/Pill";
+import { IconWrapper } from "../icon/IconWrapper";
 
 import './Steps.css';
 
@@ -31,8 +32,17 @@ function StepWrapper({step, active, onClick}) {
   return (
     <li className={`step-wrapper ${active ? 'step-wrapper--active' : ''}`} onClick={() => onClick(step.id)}>
       {renderStep(step)}
+      {step.hasError && <StepWrapperError />}
     </li>
   )
+}
+
+function StepWrapperError() {
+  return (
+    <span className="step-wrapper__error">
+      <span className="step-wrapper__error-symbol">!</span>
+    </span>
+  );
 }
 
 function renderStep(step) {
