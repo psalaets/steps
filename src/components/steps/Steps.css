@@ -48,7 +48,7 @@ ol.steps {
   height: 0;
 
   content: '';
-  border-top: 2px solid var(--step-separator-color);
+  border-top: 3px solid var(--step-separator-color);
 }
 
 .step-wrapper__error {
