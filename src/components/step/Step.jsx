@@ -1,18 +1,15 @@
 import { Children } from 'react';
+import { IconWrapper } from '../icon/IconWrapper';
+
 import './Step.css';
 
-export function Step(props) {
-  const { step, children, icon } = props;
-
+export function Step({ step, children, icon }) {
   return (
     <div className={`step`}>
-      <span className="step__icon-wrapper">
-        {icon}
-      </span>
+      <IconWrapper>{icon}</IconWrapper>
       <StepNumber>{step.stepNumber}</StepNumber>
       <StepName>{step.name}</StepName>
       {Children.count(children) > 0 ? <Indicators>{children}</Indicators> : null}
-      {/* error icon */}
     </div>
   );
 }
