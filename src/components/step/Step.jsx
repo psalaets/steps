@@ -2,7 +2,7 @@ import { Children } from 'react';
 import './Step.css';
 
 export function Step(props) {
-  const { step, children } = props;
+  const { step, children, icon } = props;
 
   const indicators = Children.count(children) > 0
     ? <Indicators>{children}</Indicators>
@@ -10,7 +10,9 @@ export function Step(props) {
 
   return (
     <li className={`step`}>
-      {/* step type icon */}
+      <span className="step__icon-wrapper">
+        {icon}
+      </span>
       <StepNumber>{step.stepNumber}</StepNumber>
       <StepName>{step.name}</StepName>
       {indicators}

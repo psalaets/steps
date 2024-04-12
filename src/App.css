@@ -1,9 +1,15 @@
 #root {
   max-width: 1280px;
+  width: 50%;
   margin: 0 auto;
   padding: 2rem;
 }
 
 *, *::before, *::after {
 /*  outline: 1px solid red;*/
+}
+
+/* All icons get this class */
+.react-icons {
+  vertical-align: middle;
 }
